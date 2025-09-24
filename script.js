@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    // --- INITIALIZE VANTA.JS ---
+// --- INITIALIZE VANTA.JS ---
     VANTA.NET({
         el: "#vanta-bg", 
         mouseControls: true,
@@ -9,14 +9,13 @@ document.addEventListener('DOMContentLoaded', () => {
         minHeight: 200.00,
         minWidth: 200.00,
         scale: 0.25,
-        scaleMobile: 1.00,
+        scaleMobile: 0.25,
         color: 0x748cab, /* Updated accent color */
         backgroundColor: 0x0d1321, /* Updated background color */
         points: 25.00,
         maxDistance: 30.00,
         spacing: 15.00
     });
-
 
     // --- SMOOTH SCROLL FOR NAV LINKS ---
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
