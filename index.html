@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Marzuq Islam</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Inter:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="vanta-bg"></div>
+
+    <header>
+      <nav class="container">
+        <a href="#hero" class="logo">Marzuq Islam</a>
+        <ul class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section id="hero">
+        <div class="hero-content container">
+          <h1 class="reveal-text">AI/ML & Data Science Engineer</h1>
+          <p class="reveal-text" style="animation-delay: 200ms">
+            I build intelligent, user-friendly applications that turn complex
+            problems into simple solutions.
+          </p>
+          <a
+            href="#projects"
+            class="cta-button reveal-text"
+            style="animation-delay: 400ms"
+            >View My Work</a
+          >
+        </div>
+      </section>
+
+      <div class="section-gradient"></div>
+
+      <section id="about" class="hidden">
+        <div class="container about-container">
+          <div class="about-text">
+            <h2>About Me</h2>
+            <p>
+              I'm driven by a curiosity for how things work and a passion for
+              building elegant solutions. As a Master's student at University
+              College Dublin, I'm deepening my expertise in machine learning and
+              web technologies. I love the entire process of turning an idea
+              into something tangible that people can use.
+            </p>
+            <p>
+              My approach combines a keen attention to detail with a focus on
+              creating intuitive user experiences. When I'm not coding, you can
+              find me exploring the hiking trails and cliffs around Dublin or
+              experimenting with a new recipe.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects" class="hidden">
+        <div class="container">
+          <h2>Featured Projects</h2>
+          <div class="projects-grid">
+            <div class="project-card">
+              <h3>Movie Recommender</h3>
+              <p>
+                A dynamic, content-based movie recommender system using cosine
+                similarity and the TMDb API to deliver real-time suggestions and
+                posters.
+              </p>
+              <div class="project-tech">
+                <span>Python</span><span>Streamlit</span><span>Pandas</span
+                ><span>Scikit-learn</span>
+              </div>
+              <div class="project-links">
+                <a
+                  href="https://marzuq-movie-recs.streamlit.app/"
+                  class="btn"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Live Demo</a
+                >
+                <a
+                  href="https://github.com/ItsMarzuq/movie-recommender"
+                  class="btn btn-secondary"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >View Code
+                </a>
+              </div>
+            </div>
+            <div class="project-card">
+              <h3>University Timetable Planner</h3>
+              <p>
+                A single-page web application helping students visualize
+                conflict-free timetables, with data persisted locally in the
+                browser.
+              </p>
+              <div class="project-tech">
+                <span>HTML</span><span>JavaScript</span
+                ><span>Tailwind CSS</span>
+              </div>
+              <div class="project-links">
+                <a
+                  href="https://csnl-module-picker.onrender.com/"
+                  class="btn"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Live Demo</a
+                >
+                <a
+                  href="https://github.com/ItsMarzuq/UCD_Course_Picker"
+                  class="btn btn-secondary"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >View Code</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="skills" class="hidden">
+        <div class="container">
+          <h2>My Tech Stack</h2>
+          <div class="skills-category">
+            <h3>Programming Languages</h3>
+            <div class="skills-list">
+              <span>Python</span><span>C</span><span>C++</span><span>SQL</span>
+            </div>
+          </div>
+          <div class="skills-category">
+            <h3>Web Development</h3>
+            <div class="skills-list">
+              <span>HTML</span><span>CSS</span><span>Tailwind</span
+              ><span>JavaScript</span><span>Streamlit</span>
+            </div>
+          </div>
+          <div class="skills-category">
+            <h3>Machine Learning & Data Analysis</h3>
+            <div class="skills-list">
+              <span>R</span><span>TensorFlow</span><span>PyTorch</span
+              ><span>MATLAB</span>
+            </div>
+          </div>
+          <div class="skills-category">
+            <h3>Certifications</h3>
+            <div class="skills-list">
+              <span>AWS Certified Cloud Practitioner</span>
+              <span>AWS Certified Solutions Architect Associate</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="hidden">
+        <div class="container contact-content">
+          <h2>Get In Touch</h2>
+          <p>
+            I'm actively looking for new internship opportunities. My inbox is
+            always open, whether you have a question or just want to connect!
+          </p>
+          <a href="mailto:islammarzuq@gmail.com" class="email-link"
+            >islammarzuq@gmail.com</a
+          >
+        </div>
+      </section>
+      <div class="footer-gradient"></div>
+    </main>
+    <footer>
+      <div class="container">
+        <p>&copy; 2025 Marzuq Islam.</p>
+      </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
