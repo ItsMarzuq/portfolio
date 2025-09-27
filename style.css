@@ -1,3 +1,4 @@
+/* --- VARIABLES & GLOBAL STYLES (DARK THEME) --- */
 :root {
     --bg-color: #0D1321;
     --card-bg: #1D2D44;
@@ -24,6 +25,7 @@ body {
     line-height: 1.6;
 }
 
+/* --- CUSTOM SCROLLBAR (NEW) --- */
 ::-webkit-scrollbar {
     width: 8px;
 }
@@ -95,10 +97,11 @@ header .container {
     text-decoration: none;
 }
 
+/* === NEW: Wrapper for right-side nav elements === */
 .nav-right {
     display: flex;
     align-items: center;
-    gap: 2rem; 
+    gap: 2rem; /* Adjust spacing between links and icons */
 }
 
 .nav-links {
@@ -165,6 +168,7 @@ header .container {
     display: block; /* Removes tiny space below SVG */
 }
 
+/* --- HERO SECTION --- */
 #hero {
     display: flex;
     align-items: center;
@@ -233,6 +237,7 @@ header .container {
     color: var(--accent-color);
 }
 
+/* --- GRADIENT SEPARATOR --- */
 .section-gradient {
     height: 150px;
     width: 100%;
@@ -248,6 +253,8 @@ header .container {
     z-index: 4;
 }
 
+
+/* --- TRANSLUCENT CONTENT SECTIONS --- */
 #about,
 #projects,
 #skills,
@@ -404,7 +411,7 @@ footer {
     opacity: 0.7;
 }
 
-
+/* --- KEYFRAME ANIMATIONS --- */
 .hidden {
     opacity: 0;
     transform: translateY(30px);
