@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 document.addEventListener("DOMContentLoaded", function () {
   // Mobile navigation toggle
   const hamburger = document.querySelector(".hamburger");
@@ -97,6 +98,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // Vanta.js background initialization
 VANTA.NET({
+=======
+document.addEventListener('DOMContentLoaded', () => {
+    VANTA.NET({
+>>>>>>> cd96b52c3b69a56ff253f64b2e25bee2d142aa4d
         el: "#vanta-bg", 
         mouseControls: true,
         touchControls: true,
@@ -110,4 +115,37 @@ VANTA.NET({
         points: 20.00,
         maxDistance: 30.00,     
         spacing: 20.00        
+<<<<<<< HEAD
     });
+=======
+    });
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                
+                if (entry.target.id === 'skills') {
+                    const skillTags = entry.target.querySelectorAll('.skills-list span');
+                    skillTags.forEach((tag, index) => {
+                        tag.style.transitionDelay = `${index * 50}ms`;
+                    });
+                }
+            }
+        });
+    }, {
+        threshold: 0.1
+    });
+
+    const hiddenElements = document.querySelectorAll('.hidden');
+    hiddenElements.forEach((el) => observer.observe(el));
+});
+>>>>>>> cd96b52c3b69a56ff253f64b2e25bee2d142aa4d
