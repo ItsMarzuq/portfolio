@@ -1,20 +1,20 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-// --- INITIALIZE VANTA.JS ---
+    // --- INITIALIZE VANTA.JS (MODIFIED) ---
     VANTA.NET({
         el: "#vanta-bg", 
         mouseControls: true,
         touchControls: true,
-        gyroControls: false,
+        gyroControls: true,
         minHeight: 200.00,
         minWidth: 200.00,
-        scale: 0.25,
-        scaleMobile: 0.25,
-        color: 0x748cab, /* Updated accent color */
-        backgroundColor: 0x0d1321, /* Updated background color */
-        points: 25.00,
-        maxDistance: 30.00,
-        spacing: 15.00
+        scale: 1.0,
+        scaleMobile: 1.0,
+        color: 0x748cab,
+        backgroundColor: 0x0d1321,
+        points: 20.00,         // Reduced points
+        maxDistance: 30.00,     // Adjusted distance
+        spacing: 20.00          // Increased spacing
     });
 
     // --- SMOOTH SCROLL FOR NAV LINKS ---
@@ -48,22 +48,5 @@ document.addEventListener('DOMContentLoaded', () => {
     const hiddenElements = document.querySelectorAll('.hidden');
     hiddenElements.forEach((el) => observer.observe(el));
 
-    // --- PROJECT CARD SPOTLIGHT EFFECT ---
-    const projectCards = document.querySelectorAll('.project-card');
-
-    projectCards.forEach(card => {
-        card.addEventListener('mousemove', (e) => {
-            const rect = card.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
-
-            card.style.setProperty('--mouse-x', `${x}px`);
-            card.style.setProperty('--mouse-y', `${y}px`);
-        });
-
-        card.addEventListener('mouseleave', () => {
-             card.style.setProperty('--mouse-x', `-1000px`);
-             card.style.setProperty('--mouse-y', `-1000px`);
-        });
-    });
+    // --- PROJECT CARD SPOTLIGHT EFFECT (REMOVED) ---
 });

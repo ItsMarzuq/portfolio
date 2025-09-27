@@ -25,6 +25,24 @@ body {
     line-height: 1.6;
 }
 
+/* --- CUSTOM SCROLLBAR (NEW) --- */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-color);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--secondary-color);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-color);
+}
+
 #vanta-bg {
     position: fixed;
     width: 100%;
@@ -68,7 +86,7 @@ header .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 6rem; /* <-- CHANGED */
+    height: 6rem;
 }
 
 .logo {
@@ -129,7 +147,7 @@ header .container {
     justify-content: center;
     text-align: center;
     min-height: 100vh;
-    padding-top: 6rem; /* <-- CHANGED */
+    padding-top: 6rem;
     position: relative;
     background: transparent;
 }
@@ -246,20 +264,6 @@ header .container {
     position: relative;
     overflow: hidden;
 }
-
-.project-card::before {
-    content: '';
-    position: absolute;
-    left: var(--mouse-x, -1000px);
-    top: var(--mouse-y, -1000px);
-    width: 200px;
-    height: 200px;
-    background: radial-gradient(circle, rgba(116, 140, 171, 0.15) 0%, rgba(116, 140, 171, 0) 60%);
-    transform: translate(-50%, -50%);
-    transition: left 0.2s ease, top 0.2s ease;
-    pointer-events: none;
-}
-
 
 .project-card h3 {
     color: var(--text-color);
