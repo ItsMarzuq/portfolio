@@ -25,7 +25,7 @@ body {
   line-height: 1.6;
 }
 
-/* --- CUSTOM SCROLLBAR (NEW) --- */
+/* --- CUSTOM SCROLLBAR --- */
 ::-webkit-scrollbar {
   width: 8px;
 }
@@ -50,6 +50,7 @@ body {
   top: 0;
   left: 0;
   z-index: -1;
+  opacity: 0.5;
 }
 
 h1,
@@ -151,7 +152,7 @@ header .container {
 .nav-socials {
   display: flex;
   gap: 1.5rem;
-  padding-left: 1rem; /* Add some space from the resume button */
+  padding-left: 1rem;
 }
 
 .social-icon-link {
@@ -170,7 +171,6 @@ header .container {
   display: block;
 }
 
-/* --- RESUME BUTTON (Desktop Nav) --- */
 .btn-resume {
   padding: 0.5rem 1rem;
   border: 1px solid var(--accent-color);
@@ -186,7 +186,7 @@ header .container {
   color: #fff;
 }
 
-/* --- HAMBURGER MENU --- */
+/* --- MOBILE NAVIGATION --- */
 .hamburger {
   display: none;
   position: relative;
@@ -205,7 +205,6 @@ header .container {
   transition: all 0.3s ease-in-out;
 }
 
-/* --- MOBILE NAVIGATION --- */
 .mobile-nav {
   position: fixed;
   top: 0;
@@ -297,6 +296,7 @@ header .container {
   z-index: 1;
   overflow: hidden;
   transition: color 0.4s ease-in-out;
+  cursor: pointer;
 }
 
 .cta-button::before {
@@ -366,7 +366,7 @@ header .container {
   opacity: 0.8;
 }
 
-/* --- EDUCATION SECTION (MODIFIED) --- */
+/* --- EDUCATION SECTION --- */
 .education-list {
   max-width: 750px;
   margin: 0 auto;
@@ -374,7 +374,7 @@ header .container {
 
 .education-entry {
   display: flex;
-  gap: 1.5rem; /* Creates space between the bullet and the text */
+  gap: 1.5rem;
   padding-bottom: 2rem;
 }
 
@@ -382,18 +382,17 @@ header .container {
   padding-bottom: 0;
 }
 
-/* This creates the custom bullet point */
 .bullet-point {
-  flex-shrink: 0; /* Prevents the bullet from shrinking */
+  flex-shrink: 0;
   width: 12px;
   height: 12px;
   background-color: var(--accent-color);
   border-radius: 50%;
-  margin-top: 0.5rem; /* Aligns the bullet with the first line of text */
+  margin-top: 0.5rem;
 }
 
 .education-content {
-  flex-grow: 1; /* Allows the text content to take up the remaining space */
+  flex-grow: 1;
 }
 
 .education-header {
@@ -418,6 +417,7 @@ header .container {
   margin-bottom: 0.75rem;
   opacity: 0.9;
 }
+
 /* --- PROJECTS SECTION --- */
 .projects-grid {
   display: grid;
@@ -490,6 +490,7 @@ header .container {
   color: #fff;
 }
 
+/* --- SKILLS SECTION --- */
 .skills-category {
   margin-bottom: 2rem;
 }
@@ -511,17 +512,15 @@ header .container {
   transform: translateY(10px);
   transition: opacity 0.3s ease, transform 0.3s ease;
 }
-.visible .skills-list span {
-  opacity: 1;
-  transform: translateY(0);
-}
 
+/* --- CONTACT SECTION --- */
 #contact {
   text-align: center;
 }
 
 .contact-content {
   max-width: 600px;
+  margin: 0 auto;
 }
 
 .contact-content p {
@@ -554,7 +553,7 @@ footer {
   z-index: 5;
 }
 
-/* --- KEYFRAME ANIMATIONS --- */
+/* --- ANIMATIONS --- */
 .hidden {
   opacity: 0;
   transform: translateY(30px);
@@ -562,6 +561,11 @@ footer {
 }
 
 .visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#skills.visible .skills-list span {
   opacity: 1;
   transform: translateY(0);
 }
@@ -593,35 +597,5 @@ footer {
 @keyframes slide-out {
   to {
     transform: scaleX(0);
-  }
-}
-
-@media (max-width: 768px) {
-  h1 {
-    font-size: 2.5rem;
-  }
-  .nav-right {
-    display: none;
-  }
-  .hamburger {
-    display: block;
-  }
-  .projects-grid {
-    grid-template-columns: 1fr;
-  }
-
-  /* Hamburger animation */
-  .hamburger.is-active .bar:nth-child(2) {
-    opacity: 0;
-  }
-  .hamburger.is-active .bar:nth-child(1) {
-    transform: translateY(8px) rotate(45deg);
-  }
-  .hamburger.is-active .bar:nth-child(3) {
-    transform: translateY(-8px) rotate(-45deg);
-  }
-
-  body.nav-open {
-    overflow: hidden;
   }
 }

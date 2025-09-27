@@ -12,8 +12,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Smooth scroll and scroll-to-center functionality
   function scrollToSection(event) {
+    // Check if the link is an external link or a mailto link
+    const href = event.currentTarget.getAttribute("href");
+    if (!href.startsWith("#")) {
+      return; // Allow default behavior for external/mailto links
+    }
+
     event.preventDefault();
-    const targetId = event.currentTarget.getAttribute("href");
+    const targetId = href;
     const targetSection = document.querySelector(targetId);
 
     if (targetSection) {
@@ -26,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const viewportHeight = window.innerHeight;
       const sectionHeight = targetSection.offsetHeight;
       const scrollPosition =
-        offsetPosition - (viewportHeight - sectionHeight) / 2;
+        offsetPosition - (viewportHeight - sectionHeight) / 2 + (headerOffset / 2);
 
       window.scrollTo({
         top: scrollPosition,
@@ -42,57 +48,33 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  // Attach event listeners to desktop navigation links
-  document.querySelectorAll(".nav-links a").forEach((link) => {
+  // Attach event listeners to all internal links
+  document.querySelectorAll('a[href^="#"]').forEach((link) => {
     link.addEventListener("click", scrollToSection);
   });
-
-  // Attach event listeners to mobile navigation links
-  document.querySelectorAll(".mobile-nav .mobile-link").forEach((link) => {
-    link.addEventListener("click", scrollToSection);
-  });
-
-  // Attach event listener to the hero CTA button
-  document.querySelector(".cta-button").addEventListener("click", scrollToSection);
 
   // Intersection Observer for animations
-  const hiddenElements = document.querySelectorAll(".hidden");
-  const revealTextElements = document.querySelectorAll(".reveal-text");
-
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           entry.target.classList.add("visible");
-          observer.unobserve(entry.target); // Stop observing once visible
-        }
-      });
-    },
-    { threshold: 0.1 } // Adjust as needed
-  );
-
-  hiddenElements.forEach((el) => observer.observe(el));
-
-  // Special observer for skills section to delay skill item animation
-  const skillsObserver = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
-          // Add a staggered animation for skill items if needed
-          const skillSpans = entry.target.querySelectorAll(".skills-list span");
-          skillSpans.forEach((span, index) => {
-            span.style.transitionDelay = `${index * 50}ms`; // Stagger delay
-            span.classList.add("visible");
-          });
-          skillsObserver.unobserve(entry.target);
+          
+          // Add staggered animation for skill items
+          if (entry.target.id === 'skills') {
+            const skillSpans = entry.target.querySelectorAll(".skills-list span");
+            skillSpans.forEach((span, index) => {
+              span.style.transitionDelay = `${index * 50}ms`;
+            });
+          }
         }
       });
     },
     { threshold: 0.1 }
   );
 
-  document.querySelectorAll("#skills").forEach((el) => skillsObserver.observe(el));
+  const hiddenElements = document.querySelectorAll(".hidden");
+  hiddenElements.forEach((el) => observer.observe(el));
 });
 
 // Vanta.js background initialization
@@ -105,9 +87,9 @@ VANTA.NET({
   minWidth: 200.0,
   scale: 1.0,
   scaleMobile: 1.0,
-  color: 0x748cab, // Accent color
-  backgroundColor: 0x0d1321, // BG color
-  points: 15.0,
-  maxDistance: 30.0,
+  color: 0x748cab, 
+  backgroundColor: 0x0d1321, 
+  points: 20.0,
+  maxDistance: 25.0,
   spacing: 15.0,
 });
