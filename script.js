@@ -1,6 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-
-    // --- INITIALIZE VANTA.JS (MODIFIED) ---
     VANTA.NET({
         el: "#vanta-bg", 
         mouseControls: true,
@@ -12,12 +10,10 @@ document.addEventListener('DOMContentLoaded', () => {
         scaleMobile: 1.0,
         color: 0x748cab,
         backgroundColor: 0x0d1321,
-        points: 20.00,         // Reduced points
-        maxDistance: 30.00,     // Adjusted distance
-        spacing: 20.00          // Increased spacing
+        points: 20.00,
+        maxDistance: 30.00,     
+        spacing: 20.00        
     });
-
-    // --- SMOOTH SCROLL FOR NAV LINKS ---
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
@@ -26,8 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     });
-    
-    // --- ON-SCROLL FADE-IN ANIMATION ---
+
     const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
             if (entry.isIntersecting) {
@@ -47,6 +42,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const hiddenElements = document.querySelectorAll('.hidden');
     hiddenElements.forEach((el) => observer.observe(el));
-
-    // --- PROJECT CARD SPOTLIGHT EFFECT (REMOVED) ---
 });

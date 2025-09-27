@@ -97,6 +97,13 @@ header .container {
     text-decoration: none;
 }
 
+/* === NEW: Wrapper for right-side nav elements === */
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 2rem; /* Adjust spacing between links and icons */
+}
+
 .nav-links {
     display: flex;
     list-style: none;
@@ -139,6 +146,27 @@ header .container {
     transform-origin: bottom left;
 }
 
+/* === NEW: Social icons styling === */
+.nav-socials {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.social-icon-link {
+    color: var(--text-color);
+    opacity: 0.7;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    display: inline-block; /* For transform to work */
+}
+
+.social-icon-link:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+.social-icon-link svg {
+    display: block; /* Removes tiny space below SVG */
+}
 
 /* --- HERO SECTION --- */
 #hero {
@@ -426,9 +454,8 @@ footer {
 }
 
 
-/* --- RESPONSIVE DESIGN --- */
 @media (max-width: 768px) {
     h1 { font-size: 2.5rem; }
-    .nav-links { display: none; }
+    .nav-right { display: none; } 
     .projects-grid { grid-template-columns: 1fr; }
 }
